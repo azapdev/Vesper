@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+:root {
+  --color-cornflower-blue: #6390ff;
+  --color-zumthor: #eef2ff;
+  --color-gray: #bebebe;
+}
+
+@theme {
+  --color-cornflower-blue: var(--color-cornflower-blue);
+  --color-zumthor: var(--color-zumthor);
+  --color-gray: var(--color-gray);
+  --font-space: 'SpaceGroTAsk', sans-serif;
+}
+
+@font-face {
+  font-family: 'SpaceGroTAsk';
+  src: url('./assets/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: var(--font-space);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
