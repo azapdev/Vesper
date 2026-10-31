@@ -23,7 +23,7 @@ const Header = () => {
         }`}
       />
 
-      <header className="relative z-50 border-b border-white/10 bg-black/30 px-5 py-4 backdrop-blur-2xl sm:px-8">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/30 px-5 py-4 backdrop-blur-2xl sm:px-8">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           {/* LOGO */}
           <Link
