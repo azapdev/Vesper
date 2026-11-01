@@ -60,7 +60,7 @@ const TrustedBrands: React.FC<TrustedBrandsProps> = ({ className }) => {
         {/* Marquee Container */}
         <div
           ref={containerRef}
-          className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+          className="relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent_0,black_128px,black_calc(100%-128px),transparent_100%)]"
         >
           <motion.div
             style={{ x }}
