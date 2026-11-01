@@ -1,9 +1,11 @@
 import { ShootingStarsAndStarsBackgroundDemo } from '@/Pages/home/hero';
+import Manifesto from './manifesto';
 
 const Home = () => {
   return (
-    <div className="z-50 text-white">
+    <div className="">
       <ShootingStarsAndStarsBackgroundDemo />
+      <Manifesto />
     </div>
   );
 };
