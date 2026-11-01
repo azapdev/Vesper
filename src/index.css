@@ -28,3 +28,25 @@ body {
   box-sizing: border-box;
   background-color: black;
 }
+
+/* Animated CArousal */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  /* السرعة الافتراضية للموبايل */
+  animation: marquee 25s linear infinite;
+}
+
+/* تحكم بالسرعة حسب الشاشة (Media Query) */
+@media (min-width: 768px) {
+  .animate-marquee {
+    animation-duration: 40s; /* أبطأ شوية على التابلت والديسكتوب */
+  }
+}

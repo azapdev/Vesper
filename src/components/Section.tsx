@@ -6,7 +6,7 @@ type Props = {
 const Section = ({ children, style }: Props) => {
   return (
     <section
-      className={` px-4 py-15  sm:px-8 sm:py-24 md:px-16 md:py-20 ${style}`}
+      className={`px-4 py-15 sm:px-8 sm:py-24 md:px-16 md:py-20 ${style}`}
     >
       {children}
     </section>

@@ -1,5 +1,6 @@
 import Section from '@/components/Section';
 import Title from '@/components/Title';
+import TrustedBrands from '@/components/ui/AutuscroolCArousal';
 
 const Manifesto = () => {
   return (
@@ -24,6 +25,7 @@ const Manifesto = () => {
           </span>
         </h2>
       </div>
+      <TrustedBrands />
     </Section>
   );
 };

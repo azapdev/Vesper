@@ -8,32 +8,33 @@ import { Links } from '@/Routes/routes';
 
 export function ShootingStarsAndStarsBackgroundDemo() {
   return (
-    <Section style="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-md ">
-      {/* Hero */}
-      <main className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-black">
-        <HeroOrbCanvas />
+    <Section style="relative flex min-h-[calc(100vh-60px)] w-full flex-col items-center justify-center overflow-hidden bg-black ">
+      {/* Canvas Background */}
+      <HeroOrbCanvas />
 
-        <div className="relative z-10 flex w-full flex-col items-center gap-4 px-4 text-center sm:gap-5 md:gap-6">
-          {/* EST */}
-          <Title title="CREATIVE STUDIO — EST. 2026" />
+      {/* Main Content */}
+      <div className="relative z-10 flex max-w-4xl flex-col items-center gap-4 text-center sm:gap-5 md:gap-6">
+        {/* EST */}
+        <Title title="CREATIVE STUDIO — EST. 2026" />
 
-          {/* Heading */}
-          <h2 className="max-w-4xl text-3xl leading-tight font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            We build worlds beyond the dark
-          </h2>
+        {/* Heading */}
+        <h1 className="max-w-3xl text-2xl leading-tight font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+          We build worlds beyond the dark
+        </h1>
 
-          {/* Description */}
-          <p className="max-w-xl text-sm leading-relaxed text-gray-400 sm:text-base md:text-lg">
-            An independent design studio crafting cinematic brands, products,
-            and digital worlds for companies reaching further than before.
-          </p>
+        {/* Description */}
+        <p className="max-w-lg text-xs leading-relaxed text-gray-400 sm:text-base md:text-lg">
+          An independent design studio crafting cinematic brands, products, and
+          digital worlds for companies reaching further than before.
+        </p>
 
-          <div className="mt-4">
-            <Button title="Start Project" to={Links.CONTACT} />
-          </div>
+        {/* CTA Button */}
+        <div className="mt-2 sm:mt-4">
+          <Button title="Start Project" to={Links.CONTACT} />
         </div>
-      </main>
+      </div>
 
+      {/* Background Animations */}
       <ShootingStars
         minSpeed={3}
         maxSpeed={6}
