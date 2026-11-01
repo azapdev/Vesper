@@ -31,10 +31,9 @@ const TrustedBrands: React.FC<TrustedBrandsProps> = ({ className }) => {
   // بنكرر الماركي عشان نعمل Loop لا نهائي ناعم
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
-  // دالة الحركة المستمرة
+  // دالة الحركة المستمرة (تم تقليل السرعة لأقصى درجة عشان تكون هادية جداً)
   useAnimationFrame((_, delta) => {
-    // السرعة (كل ما تزيد الرقم، الحركة تبقا أسرع)
-    let moveBy = -0.05 * delta;
+    let moveBy = -0.001 * delta;
 
     // بنحرك الـ base بنسبة تتناسب مع الوقت المنقرض
     baseX.set(baseX.get() + moveBy);
