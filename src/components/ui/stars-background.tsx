@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 interface StarProps {
   x: number;
@@ -7,7 +7,6 @@ interface StarProps {
   radius: number;
   opacity: number;
   twinkleSpeed: number | null;
-  blur: number;
 }
 
 interface StarBackgroundProps {
@@ -27,7 +26,6 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   maxTwinkleSpeed = 2,
   className,
 }) => {
-  const [stars, setStars] = useState<StarProps[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const generateStars = useCallback(
@@ -48,7 +46,6 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
             ? minTwinkleSpeed +
               Math.random() * (maxTwinkleSpeed - minTwinkleSpeed)
             : null,
-          blur: Math.random() * 4 + 1,
         };
       });
     },
@@ -65,41 +62,26 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const updateStars = () => {
-      const rect = canvas.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      setStars(generateStars(rect.width, rect.height));
-    };
-
-    updateStars();
-
-    const resizeObserver = new ResizeObserver(updateStars);
-    resizeObserver.observe(canvas);
-
-    return () => resizeObserver.disconnect();
-  }, [generateStars]);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let animationFrameId: number;
+    let width = (canvas.width = canvas.offsetWidth);
+    let height = (canvas.height = canvas.offsetHeight);
+    let stars = generateStars(width, height);
+
+    // التعامل مع تغيير حجم الشاشة بكفاءة من غير إعادة حسابات زايدة
+    const handleResize = () => {
+      if (!canvas) return;
+      width = canvas.width = canvas.offsetWidth;
+      height = canvas.height = canvas.offsetHeight;
+      stars = generateStars(width, height);
+    };
+
+    window.addEventListener('resize', handleResize);
 
     const render = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+      ctx.clearRect(0, 0, width, height);
       const time = Date.now() * 0.001;
 
       stars.forEach((star) => {
@@ -108,20 +90,10 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
             ? 0.35 + Math.abs(Math.sin(time / star.twinkleSpeed) * 0.65)
             : star.opacity;
 
-        ctx.save();
-
-        // Soft glow
-        ctx.shadowBlur = star.blur * 4;
-        ctx.shadowColor = 'rgba(255, 255, 255, 0.9)';
-
-        // Star core
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-
         ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
         ctx.fill();
-
-        ctx.restore();
       });
 
       animationFrameId = requestAnimationFrame(render);
@@ -129,8 +101,11 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
     render();
 
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [stars]);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [generateStars]);
 
   return (
     <canvas

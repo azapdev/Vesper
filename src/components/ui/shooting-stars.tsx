@@ -101,9 +101,7 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
         const radians = (prevStar.angle * Math.PI) / 180;
 
         const newX = prevStar.x + prevStar.speed * Math.cos(radians) * delta;
-
         const newY = prevStar.y + prevStar.speed * Math.sin(radians) * delta;
-
         const newDistance = prevStar.distance + prevStar.speed * delta;
 
         // Fade gradually near the end of the screen
