@@ -1,0 +1,157 @@
+{
+  "projects": [
+    {
+      "category": "Brand Identity",
+      "title": "Helios Dynamics",
+      "description": "A solar-grade identity system forged for a private space-launch venture.",
+      "client": "Helios Aerospace",
+      "year": 2025,
+      "image": "../img/works/Helios Dynamics/1.webp",
+      "image2": "../img/works/Helios Dynamics/2.webp",
+      "image3": "../img/works/Helios Dynamics/3.webp",
+      "discipline": "Brand Identity",
+      "sections": [
+        {
+          "number": "01 / 03",
+          "heading": "Overview",
+          "content": "Helios Aerospace approached us to forge an identity worthy of the next era of orbital flight — a system that could feel both engineered and human across launch livery, mission control, and the screens of millions watching from the ground."
+        },
+        {
+          "number": "02 / 03",
+          "heading": "The Challenge",
+          "content": "The brand had grown through a decade of acquisitions, leaving a fractured visual language with no single voice. Every spacecraft, deck, and microsite spoke differently, and the gap between the engineering culture and the public story had widened into something unmissable."
+        },
+        {
+          "number": "03 / 03",
+          "heading": "The Solution",
+          "content": "We built a precise, modular identity around a single radiant mark and a monolithic typographic system. Motion principles, a calibrated dark palette, and a flexible grid let the brand scale from a 3-second launch sting to a 300-page technical manual without ever losing its center of gravity."
+        }
+      ]
+    },
+    {
+      "category": "Web Experience",
+      "title": "Orbital",
+      "description": "An immersive WebGL product story for an orbital-logistics platform.",
+      "client": "Orbital Systems",
+      "year": 2025,
+      "image": "../img/works/Orbital/1.webp",
+      "image2": "../img/works/Orbital/2.webp",
+      "image3": "../img/works/Orbital/3.webp",
+      "discipline": "Web Experience",
+      "sections": [
+        {
+          "number": "02 / 03",
+          "heading": "The Challenge",
+          "content": "The product was abstract and invisible: data moving between objects we will never see. Communicating that with clarity, without drowning the story in jargon or hollow 3D spectacle, demanded restraint as much as ambition."
+        },
+        {
+          "number": "03 / 03",
+          "heading": "The Solution",
+          "content": "We designed a cinematic, scroll-choreographed journey anchored by a live constellation visualization. Each section reveals one layer of the system, pacing the technical depth so a five-minute read feels like a guided flight rather than a datasheet."
+        }
+      ]
+    },
+    {
+      "category": "Motion & Film",
+      "title": "Nocturne",
+      "description": "Title design and a motion language for a nocturnal sound label.",
+      "client": "Nocturne Audio",
+      "year": 2024,
+      "image": "../img/works/Nocturne/1.webp",
+      "image2": "../img/works/Nocturne/2.webp",
+      "image3": "../img/works/Nocturne/3.webp",
+      "discipline": "Motion & Film",
+      "sections": [
+        {
+          "number": "01 / 03",
+          "heading": "Overview",
+          "content": "Nocturne Audio builds reference-grade listening hardware for people who treat sound as architecture. We were asked to direct the launch film and motion system for their first flagship product."
+        },
+        {
+          "number": "02 / 03",
+          "heading": "The Challenge",
+          "content": "Audio is the hardest thing to show. We needed to make stillness feel charged — to translate the experience of a perfectly quiet room and a single resolving note into something a viewer could feel in under ninety seconds."
+        },
+        {
+          "number": "03 / 03",
+          "heading": "The Solution",
+          "content": "We shot a sequence built almost entirely on negative space, light, and micro-movement, then scored the edit to the product’s own frequency response. The motion language carried into the site and store, so the campaign felt like one continuous breath."
+        }
+      ]
+    },
+    {
+      "category": "Spatial / WebGL",
+      "title": "Meridian",
+      "description": "A real-time spatial interface for a deep-sensing research lab.",
+      "client": "Meridian Labs",
+      "year": 2025,
+      "image": "../img/works/Meridian/1.webp",
+      "image2": "../img/works/Meridian/2.webp",
+      "image3": "../img/works/Meridian/3.webp",
+      "discipline": "Spatial / WebGL",
+      "sections": [
+        {
+          "number": "02 / 03",
+          "heading": "The Challenge",
+          "content": "Real-time WebGL at this fidelity fights against performance, accessibility, and the simple human need to not get lost. The interface had to feel weightless on a laptop while rendering millions of points without ever stuttering or disorienting."
+        },
+        {
+          "number": "03 / 03",
+          "heading": "The Solution",
+          "content": "We built a custom navigation grammar and a layered level-of-detail system that loads the world as you move through it. Considered lighting, a muted palette, and clear spatial cues keep the focus on understanding the space rather than fighting the controls."
+        }
+      ]
+    },
+    {
+      "category": "Brand Identity",
+      "title": "Eclipse",
+      "description": "The darkest luxury brand world, built entirely in shadow.",
+      "client": "Noir Atelier",
+      "year": 2024,
+      "image": "../img/works/Eclipse/1.webp",
+      "image2": "../img/works/Eclipse/2.webp",
+      "image3": "../img/works/Eclipse/3.webp",
+      "discipline": "Brand Identity",
+      "sections": [
+        {
+          "number": "02 / 03",
+          "heading": "The Challenge",
+          "content": "Going this dark is a liability in retail and in e-commerce alike — black on black reads as a void or a defect unless every edge, finish, and shadow is deliberate. The brand needed depth without ever feeling like an error."
+        },
+        {
+          "number": "03 / 03",
+          "heading": "The Solution",
+          "content": "We engineered a system of near-black surfaces separated only by texture, foil, and the faintest specular highlight. Packaging, type, and the digital storefront share one obsessive rule: light is the only color, and it is rationed with intent."
+        }
+      ]
+    },
+    {
+      "category": "Web Experience",
+      "title": "Pale Blue",
+      "description": "A climate non-profit's data-driven story of a fragile planet.",
+      "client": "Pale Blue Foundation",
+      "year": 2024,
+      "image": "../img/works/Pale Blue/1.webp",
+      "image2": "../img/works/Pale Blue/2.webp",
+      "image3": "../img/works/Pale Blue/3.webp",
+      "discipline": "Web Experience",
+      "sections": [
+        {
+          "number": "01 / 03",
+          "heading": "Overview",
+          "content": "The Pale Blue Foundation funds climate and ocean research. They needed a digital home that could hold rigorous science and genuine emotion in the same frame, and move people from reading to giving."
+        },
+        {
+          "number": "02 / 03",
+          "heading": "The Challenge",
+          "content": "Nonprofit sites tend to drift into either dry data or empty sentiment. The challenge was to honor the research with real depth while keeping the experience human enough that a first-time visitor would stay, feel something, and act."
+        },
+        {
+          "number": "03 / 03",
+          "heading": "The Solution",
+          "content": "We structured the site around a single descending narrative — from the scale of the planet down to one fundable project — paired with a calm, data-forward visual system. Clear giving moments are woven through the story rather than bolted onto the end."
+        }
+      ]
+    }
+  ]
+}

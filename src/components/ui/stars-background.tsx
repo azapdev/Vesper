@@ -27,6 +27,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
   className,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const starsRef = useRef<StarProps[]>([]);
 
   const generateStars = useCallback(
     (width: number, height: number): StarProps[] => {
@@ -60,39 +61,53 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
   useEffect(() => {
     const canvas = canvasRef.current;
+
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
+
     if (!ctx) return;
 
-    let animationFrameId: number;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
-    let stars = generateStars(width, height);
+    const dimensions = {
+      width: canvas.offsetWidth,
+      height: canvas.offsetHeight,
+    };
 
-    // التعامل مع تغيير حجم الشاشة بكفاءة من غير إعادة حسابات زايدة
+    canvas.width = dimensions.width;
+    canvas.height = dimensions.height;
+
+    starsRef.current = generateStars(dimensions.width, dimensions.height);
+
+    let animationFrameId: number;
+
     const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-      stars = generateStars(width, height);
+      dimensions.width = canvas.offsetWidth;
+      dimensions.height = canvas.offsetHeight;
+
+      canvas.width = dimensions.width;
+      canvas.height = dimensions.height;
+
+      starsRef.current = generateStars(dimensions.width, dimensions.height);
     };
 
     window.addEventListener('resize', handleResize);
 
     const render = () => {
-      ctx.clearRect(0, 0, width, height);
+      ctx.clearRect(0, 0, dimensions.width, dimensions.height);
+
       const time = Date.now() * 0.001;
 
-      stars.forEach((star) => {
+      starsRef.current.forEach((star) => {
         const opacity =
           star.twinkleSpeed !== null
             ? 0.35 + Math.abs(Math.sin(time / star.twinkleSpeed) * 0.65)
             : star.opacity;
 
         ctx.beginPath();
+
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+
+        ctx.fillStyle = `rgba(255,255,255,${opacity})`;
         ctx.fill();
       });
 

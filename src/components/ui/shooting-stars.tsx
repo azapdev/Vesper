@@ -52,13 +52,15 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   className,
 }) => {
   const [star, setStar] = useState<ShootingStar | null>(null);
+
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelledRef = useRef(false);
 
   useEffect(() => {
-    let cancelled = false;
+    cancelledRef.current = false;
 
     const createStar = () => {
-      if (cancelled) return;
+      if (cancelledRef.current) return;
 
       const { x, y, angle } = getRandomStartPoint();
 
@@ -74,14 +76,19 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
       });
 
       const delay = Math.random() * (maxDelay - minDelay) + minDelay;
+
       timeoutRef.current = setTimeout(createStar, delay);
     };
 
     createStar();
 
     return () => {
-      cancelled = true;
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      cancelledRef.current = true;
+
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
     };
   }, [minSpeed, maxSpeed, minDelay, maxDelay]);
 
@@ -101,14 +108,16 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
         const radians = (prevStar.angle * Math.PI) / 180;
 
         const newX = prevStar.x + prevStar.speed * Math.cos(radians) * delta;
+
         const newY = prevStar.y + prevStar.speed * Math.sin(radians) * delta;
+
         const newDistance = prevStar.distance + prevStar.speed * delta;
 
-        // Fade gradually near the end of the screen
         const maxDistance =
           Math.max(window.innerWidth, window.innerHeight) * 1.5;
 
         const fadeStart = maxDistance * 0.65;
+
         const fadeProgress = Math.max(
           0,
           (newDistance - fadeStart) / (maxDistance - fadeStart)
@@ -175,7 +184,6 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
 
       {star && (
         <g opacity={star.opacity}>
-          {/* Long shooting trail */}
           <rect
             x={star.x - starWidth * star.scale}
             y={star.y - starHeight / 2}
@@ -187,7 +195,6 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
             transform={`rotate(${star.angle}, ${star.x}, ${star.y})`}
           />
 
-          {/* Bright star head */}
           <circle
             cx={star.x}
             cy={star.y}
