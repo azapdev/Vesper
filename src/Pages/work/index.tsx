@@ -1,5 +1,11 @@
+import WaitingScreen from '../loadinPage';
+
 const Work = () => {
-  return <div>This is Work Page</div>;
+  return (
+    <div>
+      <WaitingScreen />
+    </div>
+  );
 };
 
 export default Work;

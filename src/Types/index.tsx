@@ -6,6 +6,7 @@ export interface ProjectSection {
 
 export interface Project {
   category: string;
+  slug: string;
   title: string;
   description: string;
   client: string;

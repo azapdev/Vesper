@@ -1,4 +1,7 @@
-import { About, Contact, Home, Work } from '../Pages';
+import About from "@/Pages/about";
+import Contact from "@/Pages/contact";
+import Home from "@/Pages/home";
+import Work from "@/Pages/work";
 
 export const Links = {
   HOME: '/',

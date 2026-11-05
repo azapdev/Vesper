@@ -1,5 +1,11 @@
+import WaitingScreen from '../loadinPage';
+
 const About = () => {
-  return <div>This is About Page</div>;
+  return (
+    <div>
+      <WaitingScreen />
+    </div>
+  );
 };
 
 export default About;

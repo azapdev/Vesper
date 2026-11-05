@@ -3,6 +3,7 @@
     {
       "category": "Brand Identity",
       "title": "Helios Dynamics",
+      "slug": "helios-dynamics",
       "description": "A solar-grade identity system forged for a private space-launch venture.",
       "client": "Helios Aerospace",
       "year": 2025,
@@ -31,6 +32,7 @@
     {
       "category": "Web Experience",
       "title": "Orbital",
+      "slug": "orbital",
       "description": "An immersive WebGL product story for an orbital-logistics platform.",
       "client": "Orbital Systems",
       "year": 2025,
@@ -54,6 +56,7 @@
     {
       "category": "Motion & Film",
       "title": "Nocturne",
+      "slug": "nocturne",
       "description": "Title design and a motion language for a nocturnal sound label.",
       "client": "Nocturne Audio",
       "year": 2024,
@@ -82,6 +85,7 @@
     {
       "category": "Spatial / WebGL",
       "title": "Meridian",
+      "slug": "meridian",
       "description": "A real-time spatial interface for a deep-sensing research lab.",
       "client": "Meridian Labs",
       "year": 2025,
@@ -105,6 +109,7 @@
     {
       "category": "Brand Identity",
       "title": "Eclipse",
+      "slug": "eclipse",
       "description": "The darkest luxury brand world, built entirely in shadow.",
       "client": "Noir Atelier",
       "year": 2024,
@@ -128,6 +133,7 @@
     {
       "category": "Web Experience",
       "title": "Pale Blue",
+      "slug": "pale-blue",
       "description": "A climate non-profit's data-driven story of a fragile planet.",
       "client": "Pale Blue Foundation",
       "year": 2024,

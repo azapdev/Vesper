@@ -1,5 +1,11 @@
+import WaitingScreen from '../loadinPage';
+
 const Contact = () => {
-  return <div>Thsi is Coontcat page</div>;
+  return (
+    <div>
+      <WaitingScreen />
+    </div>
+  );
 };
 
 export default Contact;

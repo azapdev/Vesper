@@ -2,6 +2,7 @@ import Section from '@/components/Section';
 import Title from '@/components/Title';
 import useProjects from '@/Hooks/useData';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const Works = () => {
   const { ref, inView } = useInView({
@@ -10,7 +11,7 @@ const Works = () => {
   });
 
   // بنبعت الـ inView للـ Hook
-  const { data, isPending, error } = useProjects(inView);
+  const { data, isPending, error } = useProjects();
 
   return (
     <div ref={ref}>
@@ -106,9 +107,12 @@ const Works = () => {
                         {project.title}
                       </h2>
 
-                      <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:border-[#6489ff] group-hover:text-[#6489ff]">
+                      <Link
+                        to={`/works/${project.slug}`}
+                        className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/10 text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:border-[#6489ff] group-hover:text-[#6489ff]"
+                      >
                         ↗
-                      </span>
+                      </Link>
                     </div>
                   </div>
                 </article>
