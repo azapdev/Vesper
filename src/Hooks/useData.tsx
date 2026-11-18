@@ -1,18 +1,21 @@
-import { API } from '@/Interceptors';
 import { useQuery } from '@tanstack/react-query';
 
 const useData = (endpoint: string, enabled = true) => {
   const getData = async () => {
-    try {
-      if (import.meta.env.DEV) {
-        const res = await API.get(`/${endpoint}`);
-        return res.data;
-      }
-    } catch (error) {
-      console.warn(
-        'Backend server not running, falling back to static db.json'
-      );
-    }
+    //============================>>>>>>> When REAL API IS EXSIED!
+
+    // try {
+    //   if (import.meta.env.DEV) {
+    //     const res = await API.get(`/${endpoint}`);
+    //     return res.data;
+    //   }
+    // } catch (error) {
+    //   console.warn(
+    //     'Backend server not running, falling back to static db.json'
+    //   );
+    // }
+
+    //=============================================================
 
     const res = await fetch('/data/db.json');
     const data = await res.json();

@@ -30,7 +30,7 @@ const WorkElementPage = () => {
   }
 
   // 6. Return the actual project page content
-  return <div>Hello</div>;
+  return <div><WaitingScreen/></div>;
 };
 
 export default WorkElementPage;
