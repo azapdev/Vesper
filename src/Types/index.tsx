@@ -1,10 +1,10 @@
-export interface ProjectSection {
+export type ProjectSection = {
   number: string;
   heading: string;
   content: string;
-}
+};
 
-export interface Project {
+export type Project = {
   category: string;
   slug: string;
   title: string;
@@ -16,4 +16,11 @@ export interface Project {
   image3: string;
   discipline: string;
   sections: ProjectSection[];
-}
+};
+
+export type ServiceType = {
+  index: string;
+  title: string;
+  percent: number;
+  sevices: string;
+};

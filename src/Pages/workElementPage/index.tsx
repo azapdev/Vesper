@@ -1,4 +1,4 @@
-import useProjects from '@/Hooks/useData';
+import useData from '@/Hooks/useData';
 import type { Project } from '@/Types';
 import { useParams } from 'react-router-dom';
 import WaitingScreen from '../loadinPage';
@@ -8,7 +8,7 @@ const WorkElementPage = () => {
   const { slug } = useParams<{ slug: string }>();
 
   // 2. Get Data & Query States (isPending/isLoading)
-  const { data, isPending } = useProjects();
+  const { data, isPending } = useData('projects');
 
   // 3. Show Waiting Screen while fetching data
   if (isPending) {

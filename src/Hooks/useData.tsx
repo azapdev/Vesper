@@ -1,17 +1,29 @@
 import { API } from '@/Interceptors';
-import type { Project } from '@/Types';
 import { useQuery } from '@tanstack/react-query';
 
-const useProjects = () => {
-  const getProjects = async () => {
-    const { data } = await API.get<Project[]>('/projects');
-    return data;
+const useData = (endpoint: string, enabled = true) => {
+  const getData = async () => {
+    try {
+      if (import.meta.env.DEV) {
+        const res = await API.get(`/${endpoint}`);
+        return res.data;
+      }
+    } catch (error) {
+      console.warn(
+        'Backend server not running, falling back to static db.json'
+      );
+    }
+
+    const res = await fetch('/data/db.json');
+    const data = await res.json();
+    return data[endpoint];
   };
 
   return useQuery({
-    queryKey: ['works'],
-    queryFn: getProjects,
+    queryKey: [endpoint],
+    queryFn: getData,
+    enabled: enabled,
   });
 };
 
-export default useProjects;
+export default useData;

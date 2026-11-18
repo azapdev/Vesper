@@ -1,6 +1,7 @@
 import Section from '@/components/Section';
 import Title from '@/components/Title';
-import useProjects from '@/Hooks/useData';
+import useData from '@/Hooks/useData';
+import type { Project } from '@/Types';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +12,8 @@ const Works = () => {
   });
 
   // بنبعت الـ inView للـ Hook
-  const { data, isPending, error } = useProjects();
+  const { data, isPending, error } = useData('projects');
+  console.log(data);
 
   return (
     <div ref={ref}>
@@ -31,7 +33,7 @@ const Works = () => {
         </div>
         {!inView ? (
           <div className="min-h-[40vh]" />
-        ) : // is pendiing
+        ) : // IF__PENDIING
         isPending ? (
           <div className="flex min-h-[40vh] items-center justify-center text-white">
             <div className="flex flex-col items-center gap-5">
@@ -49,8 +51,9 @@ const Works = () => {
               </div>
             </div>
           </div>
-        ) : error ? (
-          /* لو حصل خطأ */
+        ) : // IF_ERROR
+        error ? (
+        
           <div className="flex min-h-[40vh] items-center justify-center text-center text-white">
             <div>
               <h2 className="mb-3 text-2xl font-bold">Something went wrong</h2>
@@ -60,7 +63,6 @@ const Works = () => {
             </div>
           </div>
         ) : !data?.length ? (
-          /* لو مفيش داتا */
           <div className="flex min-h-[40vh] items-center justify-center">
             <p className="text-sm tracking-widest text-white/40">
               NO PROJECTS FOUND
@@ -69,12 +71,15 @@ const Works = () => {
         ) : (
           /* Projects Grid */
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {data.map((project) => (
+            
+            {data.map((project: Project) => (
               <div key={project.title} className="group relative">
                 {/* Cornflower Blue Glow Shadow */}
                 <div className="bg-cornflower-blue absolute -inset-1 rounded-2xl opacity-0 blur-xl transition-all duration-500 group-hover:opacity-30" />
 
+                
                 <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[#101010] transition-all duration-500 group-hover:-translate-y-2 group-hover:border-[#6489ff]/40">
+                  
                   {/* Image */}
                   <div className="relative aspect-[1.65/1] overflow-hidden bg-linear-to-br from-[#17212b] via-[#0b1118] to-black">
                     {project.image && (
@@ -115,6 +120,7 @@ const Works = () => {
                       </Link>
                     </div>
                   </div>
+
                 </article>
               </div>
             ))}

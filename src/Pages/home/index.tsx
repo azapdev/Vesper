@@ -1,5 +1,6 @@
 import { ShootingStarsAndStarsBackgroundDemo } from '@/Pages/home/hero';
 import Manifesto from './manifesto';
+import Services from './services';
 import Works from './works';
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <ShootingStarsAndStarsBackgroundDemo />
       <Manifesto />
       <Works />
+      <Services />
     </div>
   );
 };
