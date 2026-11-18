@@ -60,7 +60,7 @@ const ServiceRow = ({ item }: { item: ServiceType }) => {
 
   const lineWidth = useTransform(smooth, [0, 1], ['0%', `${item.percent}%`]);
   const opacity = useTransform(smooth, [0, 1], [0, 1]);
-  const y = useTransform(smooth, [0, 1], [50, 0]);
+  const y = useTransform(smooth, [0, 1], [40, 0]);
 
   return (
     <motion.div
