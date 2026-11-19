@@ -10,7 +10,6 @@ const AppRouter = () => {
           <Route path={path} key={path} element={element} />
         ))}
         <Route path={'/works/:slug'} element={<WorkElementPage />} />
-        <Route path="/test" element={<h1>Route is working!</h1>} />
       </Routes>
     </div>
   );
