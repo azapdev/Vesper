@@ -1,5 +1,6 @@
 import { ShootingStarsAndStarsBackgroundDemo } from '@/Pages/home/hero';
 import Approach from './approach';
+import Conclusion from './conclusion';
 import HowWeWork from './howWeWork';
 import Manifesto from './manifesto';
 import Services from './services';
@@ -14,6 +15,7 @@ const Home = () => {
       <Services />
       <Approach />
       <HowWeWork />
+      <Conclusion />
     </div>
   );
 };
