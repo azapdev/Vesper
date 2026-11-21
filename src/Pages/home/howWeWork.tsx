@@ -164,7 +164,6 @@ const HowWeWork = () => {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion() ?? false;
 
-  // الـ wrapper طويل (100svh لكل خطوة) والسيكشن جواه sticky
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end end'],
@@ -176,10 +175,8 @@ const HowWeWork = () => {
     mass: 0.6,
   });
 
-  // الخط الأزرق جنب القايمة بيتملي مع السكرول
   const fillScale = useTransform(smooth, [0, 1], [0, 1]);
 
-  // الضغط على خطوة يسكرول لحد مكانها
   const goTo = (i: number) => {
     const el = ref.current;
     if (!el) return;
@@ -205,7 +202,6 @@ const HowWeWork = () => {
                 aria-hidden="true"
                 className="absolute bottom-0 left-0 h-0.5 w-full bg-white/15 md:top-0 md:h-full md:w-0.5"
               />
-              {/* FILL (موبايل): بيتملي أفقي */}
               <motion.span
                 aria-hidden="true"
                 style={{ scaleX: fillScale }}

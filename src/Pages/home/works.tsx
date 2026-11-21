@@ -1,9 +1,12 @@
 import Section from '@/components/Section';
 import Title from '@/components/Title';
-import useData from '@/Hooks/useData';
+import useData from '@/hooks/useData';
+import useMediaQuery from '@/hooks/useMediaquery';
 import type { Project } from '@/Types';
+import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import ProjectModal from '../workElement_MODAL';
 
 const Works = () => {
   const { ref, inView } = useInView({
@@ -11,9 +14,29 @@ const Works = () => {
     threshold: 0.1,
   });
 
-  // بنبعت الـ inView للـ Hook
   const { data, isPending, error } = useData('projects');
-  console.log(data);
+
+  // useNavigate Hook to handle navigation to the project detail page
+  const navigate = useNavigate();
+
+  // true لو الشاشة 1024px أو أكبر
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
+
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  // لو الشاشة صغرت والمودال مفتوح، اقفله
+  useEffect(() => {
+    if (!isDesktop) setSelectedProject(null);
+  }, [isDesktop]);
+
+  // ديسكتوب: افتح المودال | موبايل: روح لصفحة المشروع
+  const handleProjectClick = (project: Project) => {
+    if (isDesktop) {
+      setSelectedProject(project);
+    } else {
+      navigate(`/works/${project.slug}`);
+    }
+  };
 
   return (
     <div ref={ref}>
@@ -31,9 +54,10 @@ const Works = () => {
             A selection of brand, web, and motion work from 2024 — 2026.
           </p>
         </div>
+
         {!inView ? (
           <div className="min-h-[40vh]" />
-        ) : // IF__PENDIING
+        ) : // IF PENDING
         isPending ? (
           <div className="flex min-h-[40vh] items-center justify-center text-white">
             <div className="flex flex-col items-center gap-5">
@@ -51,9 +75,8 @@ const Works = () => {
               </div>
             </div>
           </div>
-        ) : // IF_ERROR
+        ) : // IF ERROR
         error ? (
-        
           <div className="flex min-h-[40vh] items-center justify-center text-center text-white">
             <div>
               <h2 className="mb-3 text-2xl font-bold">Something went wrong</h2>
@@ -71,15 +94,15 @@ const Works = () => {
         ) : (
           /* Projects Grid */
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-            
             {data.map((project: Project) => (
-              <div key={project.title} className="group relative">
+              <div key={project.slug} className="group relative">
                 {/* Cornflower Blue Glow Shadow */}
                 <div className="bg-cornflower-blue absolute -inset-1 rounded-2xl opacity-0 blur-xl transition-all duration-500 group-hover:opacity-30" />
 
-                
-                <article className="relative overflow-hidden rounded-3xl border border-white/8 bg-[#101010] transition-all duration-500 group-hover:-translate-y-2 group-hover:border-[#6489ff]/40">
-                  
+                <article
+                  onClick={() => handleProjectClick(project)}
+                  className="relative cursor-pointer overflow-hidden rounded-3xl border border-white/8 bg-[#101010] transition-all duration-500 group-hover:-translate-y-2 group-hover:border-[#6489ff]/40"
+                >
                   {/* Image */}
                   <div className="relative aspect-[1.65/1] overflow-hidden bg-linear-to-br from-[#17212b] via-[#0b1118] to-black">
                     {project.image && (
@@ -112,21 +135,25 @@ const Works = () => {
                         {project.title}
                       </h2>
 
-                      <Link
-                        to={`/works/${project.slug}`}
-                        className="flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-white/10 text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:border-[#6489ff] group-hover:text-[#6489ff]"
-                      >
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:border-[#6489ff] group-hover:text-[#6489ff]">
                         ↗
-                      </Link>
+                      </span>
                     </div>
                   </div>
-
                 </article>
               </div>
             ))}
           </div>
         )}
       </Section>
+
+      {/* Popup على الديسكتوب بس */}
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </div>
   );
 };

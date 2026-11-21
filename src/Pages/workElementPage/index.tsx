@@ -1,9 +1,11 @@
-import useData from '@/Hooks/useData';
+import useData from '@/hooks/useData';
 import type { Project } from '@/Types';
 import { useParams } from 'react-router-dom';
 import WaitingScreen from '../loadinPage';
+import Details from './details';
+import Hero from './Hero';
 
-const WorkElementPage = () => {
+const WorkElement_Page = () => {
   // 1. Get slug from URL
   const { slug } = useParams<{ slug: string }>();
 
@@ -30,7 +32,13 @@ const WorkElementPage = () => {
   }
 
   // 6. Return the actual project page content
-  return <div><WaitingScreen/></div>;
+  return (
+    <div>
+      {/* Hero */}
+      <Hero project={item} />
+      <Details project={item} />
+    </div>
+  );
 };
 
-export default WorkElementPage;
+export default WorkElement_Page;

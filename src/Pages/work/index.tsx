@@ -1,9 +1,11 @@
-import WaitingScreen from '../loadinPage';
+import Works from '../home/works';
+import Hero from './hero';
 
 const Work = () => {
   return (
     <div>
-      <WaitingScreen />
+      <Hero />
+      <Works />
     </div>
   );
 };

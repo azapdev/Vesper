@@ -42,12 +42,12 @@
       "discipline": "Web Experience",
       "sections": [
         {
-          "number": "02 / 03",
+          "number": "01 / 03",
           "heading": "The Challenge",
           "content": "The product was abstract and invisible: data moving between objects we will never see. Communicating that with clarity, without drowning the story in jargon or hollow 3D spectacle, demanded restraint as much as ambition."
         },
         {
-          "number": "03 / 03",
+          "number": "02 / 03",
           "heading": "The Solution",
           "content": "We designed a cinematic, scroll-choreographed journey anchored by a live constellation visualization. Each section reveals one layer of the system, pacing the technical depth so a five-minute read feels like a guided flight rather than a datasheet."
         }
@@ -95,12 +95,12 @@
       "discipline": "Spatial / WebGL",
       "sections": [
         {
-          "number": "02 / 03",
+          "number": "01 / 03",
           "heading": "The Challenge",
           "content": "Real-time WebGL at this fidelity fights against performance, accessibility, and the simple human need to not get lost. The interface had to feel weightless on a laptop while rendering millions of points without ever stuttering or disorienting."
         },
         {
-          "number": "03 / 03",
+          "number": "02 / 03",
           "heading": "The Solution",
           "content": "We built a custom navigation grammar and a layered level-of-detail system that loads the world as you move through it. Considered lighting, a muted palette, and clear spatial cues keep the focus on understanding the space rather than fighting the controls."
         }
@@ -119,12 +119,12 @@
       "discipline": "Brand Identity",
       "sections": [
         {
-          "number": "02 / 03",
+          "number": "01/ 03",
           "heading": "The Challenge",
           "content": "Going this dark is a liability in retail and in e-commerce alike — black on black reads as a void or a defect unless every edge, finish, and shadow is deliberate. The brand needed depth without ever feeling like an error."
         },
         {
-          "number": "03 / 03",
+          "number": "02 / 03",
           "heading": "The Solution",
           "content": "We engineered a system of near-black surfaces separated only by texture, foil, and the faintest specular highlight. Packaging, type, and the digital storefront share one obsessive rule: light is the only color, and it is rationed with intent."
         }
@@ -158,6 +158,44 @@
           "content": "We structured the site around a single descending narrative — from the scale of the planet down to one fundable project — paired with a calm, data-forward visual system. Clear giving moments are woven through the story rather than bolted onto the end."
         }
       ]
+    }
+  ],
+  "TEAM": [
+    {
+      "name": "Selene Vance",
+      "role": "Founder & Creative Director",
+      "description": "Sets the studio’s vision and guards the line between bold and considered.",
+      "image": "https://framerusercontent.com/images/bB5Qh6LW1KUzfikyjwXg3STWILU.jpg?width=896&height=1200"
+    },
+    {
+      "name": "Kai Mercer",
+      "role": "Design Director",
+      "description": "Leads identity and interface work from first sketch to final pixel.",
+      "image": "https://framerusercontent.com/images/A9fHvnXKEuhu1chiqTrx3JqxNs.jpg?width=896&height=1200"
+    },
+    {
+      "name": "Iris Moreau",
+      "role": "Head of Motion",
+      "description": "Turns static systems into films that move with intent.",
+      "image": "https://framerusercontent.com/images/Yqsy52DOOPT0BlSxNhXNz3TF24.jpg?width=896&height=1200"
+    },
+    {
+      "name": "Theo Nakamura",
+      "role": "Technical Director",
+      "description": "Builds the real-time and WebGL engines behind the spectacle.",
+      "image": "https://framerusercontent.com/images/kmVbYW53qUHTSKfzz3ocHD720vQ.jpg?width=896&height=1200"
+    },
+    {
+      "name": "Nadia Okafor",
+      "role": "Brand Strategist",
+      "description": "Finds the story worth telling before a single frame is drawn.",
+      "image": "https://framerusercontent.com/images/pNww2HrQLXZIdki5ZbdoGhd2k8A.jpeg?width=896&height=1200"
+    },
+    {
+      "name": "Elias Rhonin",
+      "role": "Spatial Designer",
+      "description": "Designs the three-dimensional worlds clients step inside.",
+      "image": "https://framerusercontent.com/images/hTTJmvjdM4TmAEbOHJN3qRPTko.jpeg?width=896&height=1200"
     }
   ]
 }

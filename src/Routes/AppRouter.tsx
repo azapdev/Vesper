@@ -1,4 +1,4 @@
-import WorkElementPage from '@/Pages/workElementPage';
+import WorkElement_Page from '@/Pages/workElementPage';
 import { Route, Routes } from 'react-router-dom';
 import { routes } from './routes';
 
@@ -9,7 +9,7 @@ const AppRouter = () => {
         {routes.map(({ path, element }) => (
           <Route path={path} key={path} element={element} />
         ))}
-        <Route path={'/works/:slug'} element={<WorkElementPage />} />
+        <Route path={'/works/:slug'} element={<WorkElement_Page />} />
       </Routes>
     </div>
   );

@@ -1,9 +1,17 @@
-import WaitingScreen from '../loadinPage';
+import Approch from './approch';
+import Contact from './contact';
+import Disciplines from './disciplines';
+import Hero from './hero';
+import Team from './team';
 
 const About = () => {
   return (
     <div>
-      <WaitingScreen />
+      <Hero />
+      <Approch />
+      <Disciplines />
+      <Team />
+      <Contact />
     </div>
   );
 };

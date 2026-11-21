@@ -24,3 +24,9 @@ export type ServiceType = {
   percent: number;
   sevices: string;
 };
+export type Member = {
+  name: string;
+  role: string;
+  description: string;
+  image: string;
+};
