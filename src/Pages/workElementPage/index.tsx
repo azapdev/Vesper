@@ -2,8 +2,8 @@ import useData from '@/hooks/useData';
 import type { Project } from '@/Types';
 import { useParams } from 'react-router-dom';
 import WaitingScreen from '../loadinPage';
-import Details from './details';
 import Hero from './Hero';
+import Details from './details';
 
 const WorkElement_Page = () => {
   // 1. Get slug from URL
