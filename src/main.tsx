@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from './components/scrollToTop.tsx';
 import './index.css';
-import Index from './layout/index.tsx';
+import Index from './Layout/index.tsx';
 
 const queryClient = new QueryClient();
 

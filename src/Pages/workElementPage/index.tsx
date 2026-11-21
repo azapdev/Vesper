@@ -1,4 +1,4 @@
-import useData from '@/hooks/useData';
+import useData from '@/Hooks/useData';
 import type { Project } from '@/Types';
 import { useParams } from 'react-router-dom';
 import WaitingScreen from '../loadinPage';

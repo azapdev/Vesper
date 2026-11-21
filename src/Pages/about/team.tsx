@@ -1,6 +1,6 @@
 import Section from '@/components/Section';
 import Title from '@/components/Title';
-import useData from '@/hooks/useData';
+import useData from '@/Hooks/useData';
 import type { Member } from '@/Types';
 import { motion, useReducedMotion } from 'framer-motion';
 
