@@ -1,6 +1,8 @@
 import Section from '@/components/Section';
 import Title from '@/components/Title';
+
 import useData from '@/Hooks/useData';
+
 import useMediaQuery from '@/Hooks/useMediaquery';
 import type { Project } from '@/Types';
 import { useEffect, useState } from 'react';
