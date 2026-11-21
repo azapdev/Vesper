@@ -8,7 +8,7 @@ type Props = {
   project: Project;
 };
 
-const Hero = ({ project }: Props) => {
+const Heroo = ({ project }: Props) => {
   return (
     <Section>
       {/* Container with Flex Col and Gap */}
@@ -86,4 +86,4 @@ const Hero = ({ project }: Props) => {
   );
 };
 
-export default Hero;
+export default Heroo;

@@ -4,7 +4,7 @@ import WaitingScreen from '../loadinPage';
 
 import useData from '@/Hooks/useData';
 import Details from './details';
-import Hero from './Hero';
+import Heroo from './Hero';
 
 const WorkElement_Page = () => {
   // 1. Get slug from URL
@@ -36,7 +36,7 @@ const WorkElement_Page = () => {
   return (
     <div>
       {/* Hero */}
-      <Hero project={item} />
+      <Heroo project={item} />
       <Details project={item} />
     </div>
   );
