@@ -4,7 +4,7 @@ import WaitingScreen from '../loadinPage';
 
 import useData from '@/Hooks/useData';
 import Details from './details';
-import Heroo from './Hero';
+import Heroo from './Head_E';
 
 const WorkElement_Page = () => {
   // 1. Get slug from URL
